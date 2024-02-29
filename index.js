@@ -1,8 +1,8 @@
 var util = require('util');
 var stream = require('stream');
-var crypto = require('crypto');
 var fs = require('fs');
 var path = require('path');
+var crypto = require('./md4');
 
 var Transform = stream.Transform;
 
@@ -141,7 +141,7 @@ Ed2kLinkHash.prototype.digest = function (encoding) {
     for (var i = 0; i < this.link.hashset.length; i++) {
       ed2kHash.update(this.link.hashset[i], 'hex');
     }
-    this.link.ed2k = ed2kHash.digest('hex').toUpperCase();
+    this.link.ed2k = ed2kHash.digest('hex');
   } else {
     this.link.ed2k = this.link.hashset.pop();
   }

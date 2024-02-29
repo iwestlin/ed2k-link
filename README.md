@@ -1,17 +1,26 @@
-# ed2k-link
+# @viegg/ed2k-link
+
+> This is a fork of [https://github.com/lightrabbit/ed2k-link](https://github.com/lightrabbit/ed2k-link)
+
+> The original code will throw an `0308010C:digital envelope routines::unsupported` error in nodejs v17+ while calling `crypto.createHash('md4')`, see [this](https://juejin.cn/post/7202639428132044858) for detail.
+
+> This fork fixed it by using a wasm `md4` hash function which stole from [webpack](https://github.com/webpack/webpack/blob/main/lib/util/hash/md4.js)
+
+> The wasm version is almost as fast as nodejs's original `crypto` module, took 3 seconds to calculate a 2GB file's ed2k link in my MBP-2018.
+
+---
 
 A simple module to parse/generate ed2k link for nodejs.   
-[![NPM](https://nodei.co/npm/ed2k-link.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ed2k-link)
 
 ## Installation
 You can use this command to install:
 
-    npm install ed2k-link
+    npm install @viegg/ed2k-link
 
 ## Usage
 You should require the module first:
 ```JavaScript
-ed2k = require('ed2k-link');
+ed2k = require('@viegg/ed2k-link');
 ```
 
 ## Example
@@ -72,5 +81,5 @@ Output:
 ## License
 The project is released under the [MIT license](http://www.opensource.org/licenses/MIT).
 
-## Contact
-Author: lightpacerabbit@gmail.com
+## Credit
+Original author: lightpacerabbit@gmail.com

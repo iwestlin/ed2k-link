@@ -1,6 +1,6 @@
 {
-  "name": "ed2k-link",
-  "version": "0.0.1",
+  "name": "@viegg/ed2k-link",
+  "version": "0.0.2",
   "description": "A simple module to parse/generate ed2k link for nodejs.",
   "main": "index.js",
   "scripts": {
@@ -20,13 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lightrabbit/ed2k-link.git"
+    "url": "https://github.com/iwestlin/ed2k-link.git"
   },
   "keywords": [
     "ed2k",
     "emule"
   ],
-  "author": "lightrabbit <lightpacerabbit@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "blanket": "*",
